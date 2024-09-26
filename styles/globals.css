@@ -1,0 +1,67 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .input-style {
+    background-color: var(--background);
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .button-style {
+    background-color: var(--foreground);
+    color: var(--background);
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .button-style:hover {
+    background-color: var(--background);
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+  }
+
+  .button-style:focus {
+    outline: none;
+    border: 1px solid var(--foreground);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+}
